@@ -1,8 +1,2 @@
 User-agent: *
 Disallow:
-
-Sitemap: https://drmsharabi.com/sitemap.xml
-
-# Block access to system files
-Disallow: /.htaccess
-Disallow: /config/
