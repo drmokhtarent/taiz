@@ -35,13 +35,6 @@
       font-weight: 400;
       font-display: swap;
     }
-    @font-face {
-      font-family: "Cairo";
-      src: url(Font/Cairo-Bold.ttf) format("truetype");
-      font-weight: 700;
-      font-display: swap;
-    }
-
     body,
     h1, h2, h3, h4, h5, h6, p, a, span, div, nav, header, footer, button, input, textarea, li {
       font-family: "Cairo", sans-serif !important;
@@ -167,17 +160,17 @@
       }
     }
 
-    .sub-title {
-      font-size: 13px;
-      color: var(--light-color);
-      white-space: nowrap;
-    }
+.sub-title {
+  font-size: 12px;
+  color: var(--light-color);
+  white-space: nowrap;
+}
 
-    @media (min-width: 768px) {
-      .sub-title {
-        font-size: 30px;
-      }
-    }
+@media (min-width: 750px) {
+  .sub-title {
+    font-size: 28px;
+  }
+}
 
     /* ---------- booking container ---------- */
     .booking-container {
@@ -926,7 +919,7 @@
     }
 
     .nav-link.active, .nav-link:hover {
-      background-color: var(--tr) !important;
+      background-color: var(--red-color) !important;
       color: white;
       box-shadow: 0 0 3px var(--shadow-bd);
       border: 1px solid white;
@@ -1091,7 +1084,7 @@
       <div class="booking-numbers">📱 730433592 &nbsp;&nbsp;|&nbsp;&nbsp; 777421224</div>
       <div class="booking-buttons">
         <a href="sms:730433592?body=أريد حجز موعد" class="booking-button sms">📩 رسالة نصية</a>
-        <a href="https://wa.me/967730433592?text=أريد%20حجز%20موعد" class="booking-button whatsapp" target="_blank">💬 واتساب</a>
+        <a href="https://wa.me/967730433592?text=أريد%20حجز%20موعد" class="booking-button whatsapp" target="_blank"> 💬 واتساب</a>
       </div>
     </div>
     <hr>
