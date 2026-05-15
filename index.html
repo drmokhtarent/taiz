@@ -117,6 +117,18 @@
   box-sizing: border-box;
 }
 
+    /* ---------- fonts ---------- */
+    @font-face {
+      font-family: "Cairo";
+      src: url(Font/Cairo-Regular.ttf) format("truetype");
+      font-weight: 400;
+      font-display: swap;
+    }
+    body,
+    h1, h2, h3, h4, h5, h6, p, a, span, div, nav, header, footer, button, input, textarea, li {
+      font-family: "Cairo", sans-serif !important;
+    }
+
 :root {
   --primary-color: #052F49;
   --secondary-color: #01849F;
@@ -166,33 +178,7 @@
 
 
 
-    @font-face {
-      font-family: "Cairo";
-      src: url(Font/Cairo-Regular.ttf) format("truetype");
-      font-weight: 400;
-      font-display: swap;
-    }
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-span,
-div,
-nav,
-header,
-footer,
-button,
-input,
-textarea,
-li {
-  font-family: "Cairo", sans-serif !important;
-}
-
+  
 body {
   background: linear-gradient(145deg, #eef2f7 0%, #d9e0e8 100%);
   line-height: 1.6;
@@ -1643,7 +1629,7 @@ hr {
 }
 
 .nav-link.active, .nav-link:hover {
-  background-color: var(--tr) !important;
+  background-color: var(--red-color) !important;
   color: white;
   box-shadow: 0 0 3px var(--shadow-bd);
   border: 1px solid white;
