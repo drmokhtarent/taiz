@@ -31,7 +31,7 @@
     <meta property="og:image:height" content="176" />
  <link
  rel="preload"
- href="/font/Cairo-Regular.woff2"
+ href="/font/Cairo-Regular.ttf"
  as="font"
  type="font/woff2"
  crossorigin
@@ -695,7 +695,7 @@ h2 {
 
 h3 {
   font-size: 16px;
-  color: var(--tr);
+  color: var(--red-color);
   margin-top: 30px;
   padding-bottom: 5px;
   width:fit-content;
@@ -900,7 +900,7 @@ hr {
 
 .profile-section {
   border: 1px solid #e5eaf1;
-  box-shadow: 0 8px 14px #00473d80;
+  box-shadow: 0 1px 4px #00473d80;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -977,7 +977,6 @@ hr {
 
 .profile-text {
   border: 1px solid #15313A;
-  box-shadow: 0 14px 10px #153233ff;
   max-width: 90%;
   background-color: #E4FAFF;
   border-radius: 0 0 30px 30px;
@@ -1044,7 +1043,7 @@ hr {
 
 .certificate-link  {
   font-size: 12px !important;
-  color: var(--link-color) !important;
+  color:blue!important;
   display: inline-block;
   font-weight: 600;
 }
@@ -1357,7 +1356,7 @@ hr {
 
 .exp-date {
   flex: 0 0 180px;
-  background: var(--secondary-color);
+  background: var(--tr);
   border-radius: 2rem;
   padding: 0.1rem 0.5rem;
   text-align: center;
@@ -1400,12 +1399,14 @@ hr {
 .exp-title {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--light-green);
+  color: var(--primary-light);
   margin-bottom: 1.4rem;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.65rem;
+  text-shadow: 1px 1px 2px white;
+
 }
 
 @media (min-width: 750px) {
@@ -1804,7 +1805,7 @@ hr {
 <div class="experience-list">
 <!-- دكتوراه مهنية -->
 <div class="exp-item">
-<div class="exp-date" style="color:white;background:var(--secondary-color)">
+<div class="exp-date" >
 <i class="far fa-calendar-alt"></i>
 2016 – 2021
 </div>
