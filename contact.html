@@ -14,15 +14,13 @@
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
   
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-T9CJLWS8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'GT-T9CJLWS8');
-  </script>
-  
+  <link
+ rel="preload"
+ href="/Font/Cairo-Bold.ttf"
+ as="font"
+ type="font/ttf"
+ crossorigin
+/>
   <!-- BreadcrumbList -->
   <script type="application/ld+json">
     {
@@ -54,18 +52,16 @@
     }
 
     /* ---------- fonts ---------- */
-    @font-face {
-      font-family: "Cairo";
-      src: url(Font/Cairo-Regular.ttf) format("truetype");
-      font-weight: 400;
-      font-display: swap;
+  @font-face{
+    font-family:'Cairo';
+    src:url('Font/Cairo-Bold.ttf') format('truetype');
+    font-weight:700;
+    font-display:swap;
     }
-  
     body,
     h1, h2, h3, h4, h5, h6, p, a, span, div, nav, header, footer, button, input, textarea, li {
       font-family: "Cairo", sans-serif !important;
     }
-
     /* ---------- root variables (موحدة من الصفحات السابقة) ---------- */
     :root {
       --primary-color: #052F49;
@@ -466,15 +462,14 @@
       box-shadow: 0 0 6px #035f6199;
       border-radius: 12px;
     }
-
     /* ---------- warning box & subsection (موحدة) ---------- */
     .warning-box {
       background-color: #fffde7;
-    
+    display: flex;
       border-radius: 5px;
       padding: 16px 8px;
       box-shadow: 0 0 14px rgba(111,130,111,.3);
-      margin: 0 20px;
+      margin: 20px auto;
       font-size: 12px;
       position: relative;
     }
@@ -486,7 +481,21 @@
         padding: 15px;
         max-width: 99%;
         margin: 0 25px 15px;
+      }}
+      
+    .main-image{width:100%;max-width:700px;height:auto;display:block;margin:20px auto;border-radius:12px; border: 1px solid black;}
+    
+.main-h{border-right:2px solid var(--gray-bg);margin:0 20px;padding:15px 25px!important;background:#fff;box-shadow:var(--shadow-sm);align-content:center;justify-content:center; text-align: center;   }
+.main-h img {
+    display: inline-block;    /* أو inline، لكن block أفضل */
+    margin: 0 auto;           /* لا يعمل إلا مع block */
+     border: 3px double var(--light-color);padding:15px 25px}
+    @media (min-width: 750px) {
+      .main-image{margin:30px auto;border-radius:32px
+          
       }
+      
+      .main-h{margin:0 30px;padding:15px 45px;}
     }
 
     .subsection {
@@ -934,25 +943,35 @@ footer {
   </header>
 
   <main>
-    <div class="main">
+    <div class="main-h">
       <h1>تواصل معنا</h1>
       <br>
-      <div style="width: 80%; max-width: 800px; margin: auto; overflow: hidden; border-radius: 12px;">
-        <img src="images/clinic-building.jpeg" alt="مبنى العيادة" class="main-image" loading="lazy">
-      </div>
-    </div>
+          <img 
+  src="images/clinic-building.webp"
+  srcset="images/clinic-building-400.webp 400w,
+          images/clinic-building-800.webp 800w,
+          images/clinic-building.webp 1200w"
+  sizes="(max-width: 600px) 400px,
+         (max-width: 1000px) 800px,
+         1200px"
+  loading="eager"
+  fetchpriority="high"
+  width="550"
+  height="307"
+  alt="مبنى العيادة"
+  decoding="async"
+  style="max-width: 100%; height: auto;   border-radius:10% 10% 10% 0; padding:10px">
+      
+    </div><br><br>
 
     <div class="subsection">
       <h2>العنوان :</h2>
-      <div class="warning-box">
-        <strong>تعز، ركن مفرق ماوية، الشارع العام، مبنى مختبرات دار الصحة</strong>
-      </div>
+      <p>تعز، ركن مفرق ماوية، الشارع العام، مبنى مختبرات دار الصحة</p>
+      
       <br>
       <h2>ساعات العمل :</h2>
-      <div class="warning-box">
-        <strong>الساعة 10 صباحًا حتى 1 بعد الظهر - كل يوم عدا الجمعة</strong>
+       <p>الساعة 10 صباحًا حتى 1 بعد الظهر - كل يوم عدا الجمعة</p>
       </div>
-    </div>
 
     <br>
     <div class="booking-container">
@@ -960,11 +979,9 @@ footer {
       <div class="booking-subtitle">أرسل الإسم برسالة على الأرقام</div>
       <div class="booking-numbers">📱 730433592 &nbsp;&nbsp;|&nbsp;&nbsp; 777421224</div>
       <div class="booking-buttons">
-        <a href="sms:+967730433592" target="_blank" class="booking-button sms">
-       📩 رسالة نصية</a>
-        <a href="https://wa.me/967730433592" target="_blank" class="booking-button whatsapp">
-
-       💬 واتساب</a>
+      
+<a href="sms:730433592?body=أريد حجز موعد" class="booking-button sms" aria-label="مراسله عبر  رسالة نصية ">📩 رسالة نصية</a>
+<a href="https://wa.me/967730433592?text=أريد%20حجز%20موعد" class="booking-button whatsapp" target="_blank" rel="noopener noreferrer"  aria-label="مراسلة مراسله عبر الواتساب ">💬 واتساب</a>
       </div>
     </div>
 
@@ -972,17 +989,23 @@ footer {
     <div class="subsection">
       <h2>الموقع الالكتروني للعيادة:</h2>
       <div class="certificate-link">
-        <a href="https://drmokhtarent.org" target="_blank">https://drmokhtarent.org</a>
+        <a href="https://drmokhtarent.org" 
+target="_blank"
+rel="noopener noreferrer" >https://drmokhtarent.org</a>
       </div>
       <br>
       <h2>الموقع على wix:</h2>
       <div class="certificate-link">
-        <a href="https://drmokhtarnajy.wixsite.com/entclinic" target="_blank">https://drmokhtarnajy.wixsite.com/entclinic</a>
+        <a href="https://drmokhtarnajy.wixsite.com/entclinic" 
+target="_blank"
+rel="noopener noreferrer" >https://drmokhtarnajy.wixsite.com/entclinic</a>
       </div>
       <br>
       <h2>الموقع البديل :</h2>
       <div class="certificate-link">
-        <a href="https://drmsharabi.com/" target="_blank">https://ent.drmsharabi.com</a>
+        <a href="https://drmsharabi.com/" 
+target="_blank"
+rel="noopener noreferrer" >https://drmsharabi.com</a>
       </div>
     </div>
 
@@ -990,7 +1013,9 @@ footer {
     <div class="main" style="text-align: center;">
       <iframe class="map" src="https://maps.google.com/maps?q=عيادة د. مختار الشرعبي تعز&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="خريطة توضح موقع عيادة د. مختار الشرعبي في تعز"></iframe>
       <div style="text-align: center;">
-        <a href="https://maps.app.goo.gl/QkJ4ynAf3jjxdw8W6" class="cta-button" target="_blank">العرض على خرائط جوجل</a>
+        <a href="https://maps.app.goo.gl/QkJ4ynAf3jjxdw8W6" class="cta-button" 
+target="_blank"
+rel="noopener noreferrer" >العرض على خرائط جوجل</a>
       </div>
     </div>
 
@@ -1005,13 +1030,27 @@ footer {
       <span>ركن مفرق ماوية، مبنى مختبرات دار الصحة</span> ، <span>تعز</span> ، <span>اليمن</span>
     </div>
     <div class="social-icons">
-      <a href="https://www.facebook.com/profile.php?id=100082372405434" class="social-icon" target="_blank"><img src="images/social/facebook.webp" height="60" width="60" alt="فيسبوك"></a>
-      <a href="https://wa.me/967730433592" class="social-icon" target="_blank"><img src="images/social/whatsapp1.webp" alt="واتساب"></a>
-      <a href="https://youtube.com/@ENTsharabi" class="social-icon" target="_blank"><img src="images/social/youtube.webp" alt="يوتيوب"></a>
-      <a href="https://www.instagram.com/dr.mokhtar_alsharabi" class="social-icon" target="_blank"><img src="images/social/instagram.webp" alt="انستغرام"></a>
-      <a href="https://x.com/Dr_Alsharaabi" class="social-icon" target="_blank"><img src="images/social/x.webp" alt="تويتر"></a>
-      <a href="https://www.tiktok.com/@dr_mokhtar_sharabi" class="social-icon" target="_blank"><img src="images/social/tiktok.webp" alt="تيك توك"></a>
-      <a href="mailto:drmokhtarnajy@gmail.com" class="social-icon" target="_blank"><img src="images/social/gmail.webp" alt="بريد إلكتروني"></a>
+      <a href="https://www.facebook.com/profile.php?id=100082372405434" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" ><img src="images/social/facebook.webp" height="60" width="60" alt="فيسبوك"></a>
+      <a href="https://wa.me/967730433592" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" ><img src="images/social/whatsapp1.webp" alt="واتساب"></a>
+      <a href="https://youtube.com/@ENTsharabi" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" ><img src="images/social/youtube.webp" alt="يوتيوب"></a>
+      <a href="https://www.instagram.com/dr.mokhtar_alsharabi" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" ><img src="images/social/instagram.webp" alt="انستغرام"></a>
+      <a href="https://x.com/Dr_Alsharaabi" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" ><img src="images/social/x.webp" alt="تويتر"></a>
+      <a href="https://www.tiktok.com/@dr_mokhtar_sharabi" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" ><img src="images/social/tiktok.webp" alt="تيك توك"></a>
+      <a href="mailto:drmokhtarnajy@gmail.com" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" ><img src="images/social/gmail.webp" alt="بريد إلكتروني"></a>
     </div>
     <div class="working-hours">⏰ مواعيد العمل: السبت - الخميس: 10:00 صباحاً - 1:00 ظهراً</div>
     <div class="copyright-container">© 2026 جميع الحقوق محفوظة - عيادة الدكتور/ مختار الشرعبي --</div>
