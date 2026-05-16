@@ -110,7 +110,6 @@
     }
   ]
 }
-
 </script>
 <style>
 * {
@@ -421,7 +420,7 @@ footer {
 
 .address-card {
   max-width: 90%;
-  background: linear-gradient(0deg, var(--link-color), var(--secondary-color), var(--secondary-color), var(--link-color));
+background: linear-gradient(35deg, var(--primary-color), var(--accent-color));
   padding: 2px 10px;
   border-block: 0.5px solid #fff;
   display: inline-block;
@@ -433,7 +432,7 @@ footer {
 
 @media (min-width: 750px) {
   .address-card {
-    font-size: 30px !important;
+    font-size: 28px !important;
     margin: 10px auto;
     padding: 10px 40px !important;
     border-radius: 0 0 40px 40px;
@@ -462,43 +461,25 @@ footer {
 
 @media (min-width: 750px) {
   .copyright-container {
-    font-size: 15px !important;
-    margin-bottom: 11px;
+    font-size: 19px !important;
+    margin-bottom: 11px; padding: 6px 10px;
   }
 }
+
+.working-hours{display:inline-block;padding:6px 25px!important;font-size:12px;font-weight:600;margin:10px auto;border-radius:25px;text-align:center; background-color: #ff0;  color: var(--text-color);}
 
 @media (max-width: 480px) {
-  .copyright-container {
-    font-size: 7px;
-    padding: 6px 10px;
+  .working-hours {
+    font-size: 9px!important;
+    padding: 4px 10px;
+    white-space: normal;
+    max-width: 90%;
   }
-}
-
-.working-hours {
-  background-color: #ff0;
-  padding: 1px 20px;
-  margin-top: 15px;
-  border: 1px solid #ffffff4d;
-  color: var(--dark-color);
-  font-size: 11px;
-  font-weight: 700;
-  width: auto;
-  border-radius: 50px;
-  text-align: center;
- 
 }
 
 @media (min-width: 750px) {
   .working-hours {
-    font-size: 18px !important;
-    padding: 10px 30px;
-    margin: 15px auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .working-hours {
-    font-size: 9px;
+    font-size: 19px!important;
     padding: 4px 10px;
     white-space: normal;
     max-width: 90%;
@@ -513,7 +494,7 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 5px 0;
-  background: linear-gradient(35deg, var(--dark-blue), var(--accent-blue));
+  
 }
 
 .social-icon img {
@@ -530,12 +511,12 @@ footer {
 
 @media (min-width: 750px) {
   .social-icon {
-    width: 70px !important;
-    height: 70px !important;
-    border: 2px solid var(--primary-blue);
+    width: 80px !important;
+    height: 80px !important;
+    border: 1px solid var(--primary-blue);
     padding: 6px !important;
     border-radius: 50% !important;
-    border: 0 !important;
+   ;
   }
 
   .social-icon img {
@@ -1708,7 +1689,14 @@ hr {
 <body>
     
 <header class="header-logo">
-      <img src="images/clinic-logo.png" <img src="images/clinic-logo.png" alt="شعار العيادة" height="85" width="85" loading="lazy" alt="شعار العيادة" >
+     <img
+  src="images/clinic-logo.webp"
+  alt="شعار العيادة"
+  width="85"
+  height="85"
+  fetchpriority="high"
+  decoding="async"
+/>
  <div class="header-text">
 <div class="main-title">عيادة د. مختار الشرعبي الإستشارية</div>
 <div class="sub-title">للأنف والأذن والحنجرة والرأس والعنق</div>
@@ -1990,25 +1978,39 @@ target="_blank" rel="noopener noreferrer"> <em> ️
         <span>اليمن</span>
       </div>
       <div class="social-icons">
-        <a href="https://www.facebook.com/profile.php?id=100082372405434" class="social-icon" target="_blank">
+          <a href="https://www.facebook.com/profile.php?id=100082372405434" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" >
           <img src="images/social/facebook.webp" height="60" width="60" alt="فيسبوك" />
         </a>
-        <a href="https://wa.me/967730433592" class="social-icon" target="_blank">
+        <a href="https://wa.me/967730433592" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" >
           <img src="images/social/whatsapp1.webp" alt="واتساب" />
         </a>
-        <a href="https://youtube.com/@ENTsharabi" class="social-icon" target="_blank">
+        <a href="https://youtube.com/@ENTsharabi" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" >
           <img src="images/social/youtube.webp" alt="يوتيوب" />
         </a>
-        <a href="https://www.instagram.com/dr.mokhtar_alsharabi" class="social-icon" target="_blank">
+        <a href="https://www.instagram.com/dr.mokhtar_alsharabi" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" >
           <img src="images/social/instagram.webp" alt="انستغرام" />
         </a>
-        <a href="https://x.com/Dr_Alsharaabi" class="social-icon" target="_blank">
+        <a href="https://x.com/Dr_Alsharaabi" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" >
           <img src="images/social/x.webp" alt="تويتر" />
         </a>
-        <a href="https://www.tiktok.com/@dr_mokhtar_sharabi" class="social-icon" target="_blank">
+        <a href="https://www.tiktok.com/@dr_mokhtar_sharabi" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" >
           <img src="images/social/tiktok.webp" alt="تيك توك" />
         </a>
-        <a href="mailto:drmokhtarnajy@gmail.com" class="social-icon" target="_blank">
+        <a href="mailto:drmokhtarnajy@gmail.com" class="social-icon" 
+target="_blank"
+rel="noopener noreferrer" >
           <img src="images/social/gmail.webp" alt="بريد إلكتروني" />
         </a>
       </div>
