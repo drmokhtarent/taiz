@@ -742,12 +742,11 @@
       margin: 20px 0;
       display: block;
     }
-
 footer {
   border-top: 4px solid #fff;
   background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
   color: #fff !important;
-  box-shadow: 2px 0 2px 5px #c20061ff;
+
   text-align: center;
   margin-bottom: 20px !important;
   padding: 10px 0;
@@ -760,17 +759,16 @@ footer {
 @media (min-width: 750px) {
   footer {
     border-top: 12px solid #fff;
-    box-shadow: 2px 0 2px 9px #c20061ff;
+  
   }
 }
 
 .address-card {
   max-width: 90%;
-  background: linear-gradient(0deg, var(--link-color), var(--secondary-color), var(--secondary-color), var(--link-color));
+background: linear-gradient(35deg, var(--primary-color), var(--accent-color));
   padding: 2px 10px;
   border-block: 0.5px solid #fff;
   display: inline-block;
-  box-shadow: 0 2px 5px #0000001a;
   font-size: 12px;
   line-height: 1.5;
   letter-spacing: 1px;
@@ -779,7 +777,7 @@ footer {
 
 @media (min-width: 750px) {
   .address-card {
-    font-size: 30px !important;
+    font-size: 28px !important;
     margin: 10px auto;
     padding: 10px 40px !important;
     border-radius: 0 0 40px 40px;
@@ -808,43 +806,25 @@ footer {
 
 @media (min-width: 750px) {
   .copyright-container {
-    font-size: 15px !important;
-    margin-bottom: 11px;
+    font-size: 19px !important;
+    margin-bottom: 11px; padding: 6px 10px;
   }
 }
+
+.working-hours{display:inline-block;padding:6px 25px!important;font-size:12px;font-weight:600;margin:10px auto;border-radius:25px;text-align:center; background-color: #ff0;  color: var(--text-color);}
 
 @media (max-width: 480px) {
-  .copyright-container {
-    font-size: 7px;
-    padding: 6px 10px;
+  .working-hours {
+    font-size: 9px!important;
+    padding: 4px 10px;
+    white-space: normal;
+    max-width: 90%;
   }
-}
-
-.working-hours {
-  background-color: #ff0;
-  padding: 1px 20px;
-  margin-top: 15px;
-  border: 1px solid #ffffff4d;
-  color: var(--dark-color);
-  font-size: 11px;
-  font-weight: 700;
-  width: auto;
-  border-radius: 50px;
-  text-align: center;
-  box-shadow: 0 2px 8px #0003;
 }
 
 @media (min-width: 750px) {
   .working-hours {
-    font-size: 18px !important;
-    padding: 10px 30px;
-    margin: 15px auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .working-hours {
-    font-size: 9px;
+    font-size: 19px!important;
     padding: 4px 10px;
     white-space: normal;
     max-width: 90%;
@@ -859,7 +839,7 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 5px 0;
-  background: linear-gradient(35deg, var(--dark-blue), var(--accent-blue));
+  
 }
 
 .social-icon img {
@@ -870,18 +850,18 @@ footer {
   border: 0.5px solid var(--green-color) !important;
   display: block;
   object-fit: cover;
-  box-shadow: 0 0 3px var(--dark-blue);
+
   padding: 3px;
 }
 
 @media (min-width: 750px) {
   .social-icon {
-    width: 70px !important;
-    height: 70px !important;
-    border: 2px solid var(--primary-blue);
+    width: 80px !important;
+    height: 80px !important;
+    border: 1px solid var(--primary-blue);
     padding: 6px !important;
     border-radius: 50% !important;
-    border: 0 !important;
+   ;
   }
 
   .social-icon img {
@@ -907,7 +887,6 @@ footer {
   transform: translateY(-5px);
   border: 5px solid white;
 }
-
 
     hr {
       margin: 15px 0;
@@ -935,7 +914,14 @@ footer {
 </head>
 <body>
   <header class="header-logo">
-    <img src="images/clinic-logo.png" alt="شعار العيادة" loading="lazy">
+   <img
+  src="images/clinic-logo.webp"
+  alt="شعار العيادة"
+  width="85"
+  height="85"
+  fetchpriority="high"
+  decoding="async"
+/>
     <div class="header-text">
       <div class="main-title">عيادة د. مختار الشرعبي الإستشارية</div>
       <div class="sub-title">للأنف والأذن والحنجرة والرأس والعنق</div>
@@ -950,10 +936,10 @@ footer {
   src="images/clinic-building.webp"
   srcset="images/clinic-building-400.webp 400w,
           images/clinic-building-800.webp 800w,
-          images/clinic-building-1100.webp 1100w"
-  sizes="(max-width: 550px) 400px,
+          images/clinic-building.webp 1100w"
+  sizes="(max-width: 600px) 400px,
          (max-width: 1000px) 800px,
-         1100px"
+         1200px"
   loading="eager"
   fetchpriority="high"
   width="550"
@@ -1025,36 +1011,54 @@ rel="noopener noreferrer" >العرض على خرائط جوجل</a>
     </div>
     <br>
   </main>
-  <footer>
-    <div class="address-card">
-      <span>ركن مفرق ماوية، مبنى مختبرات دار الصحة</span> ، <span>تعز</span> ، <span>اليمن</span>
-    </div>
-    <div class="social-icons">
-      <a href="https://www.facebook.com/profile.php?id=100082372405434" class="social-icon" 
+ <footer>
+      <div class="address-card">
+        <span>ركن مفرق ماوية، مبنى مختبرات دار الصحة</span>
+        ،
+        <span>تعز</span>
+        ،
+        <span>اليمن</span>
+      </div>
+      <div class="social-icons">
+          <a href="https://www.facebook.com/profile.php?id=100082372405434" class="social-icon" 
 target="_blank"
-rel="noopener noreferrer" ><img src="images/social/facebook.webp" height="60" width="60" alt="فيسبوك"></a>
-      <a href="https://wa.me/967730433592" class="social-icon" 
+rel="noopener noreferrer" >
+          <img src="images/social/facebook.webp" height="60" width="60" alt="فيسبوك" />
+        </a>
+        <a href="https://wa.me/967730433592" class="social-icon" 
 target="_blank"
-rel="noopener noreferrer" ><img src="images/social/whatsapp1.webp" alt="واتساب"></a>
-      <a href="https://youtube.com/@ENTsharabi" class="social-icon" 
+rel="noopener noreferrer" >
+          <img src="images/social/whatsapp1.webp" alt="واتساب" />
+        </a>
+        <a href="https://youtube.com/@ENTsharabi" class="social-icon" 
 target="_blank"
-rel="noopener noreferrer" ><img src="images/social/youtube.webp" alt="يوتيوب"></a>
-      <a href="https://www.instagram.com/dr.mokhtar_alsharabi" class="social-icon" 
+rel="noopener noreferrer" >
+          <img src="images/social/youtube.webp" alt="يوتيوب" />
+        </a>
+        <a href="https://www.instagram.com/dr.mokhtar_alsharabi" class="social-icon" 
 target="_blank"
-rel="noopener noreferrer" ><img src="images/social/instagram.webp" alt="انستغرام"></a>
-      <a href="https://x.com/Dr_Alsharaabi" class="social-icon" 
+rel="noopener noreferrer" >
+          <img src="images/social/instagram.webp" alt="انستغرام" />
+        </a>
+        <a href="https://x.com/Dr_Alsharaabi" class="social-icon" 
 target="_blank"
-rel="noopener noreferrer" ><img src="images/social/x.webp" alt="تويتر"></a>
-      <a href="https://www.tiktok.com/@dr_mokhtar_sharabi" class="social-icon" 
+rel="noopener noreferrer" >
+          <img src="images/social/x.webp" alt="تويتر" />
+        </a>
+        <a href="https://www.tiktok.com/@dr_mokhtar_sharabi" class="social-icon" 
 target="_blank"
-rel="noopener noreferrer" ><img src="images/social/tiktok.webp" alt="تيك توك"></a>
-      <a href="mailto:drmokhtarnajy@gmail.com" class="social-icon" 
+rel="noopener noreferrer" >
+          <img src="images/social/tiktok.webp" alt="تيك توك" />
+        </a>
+        <a href="mailto:drmokhtarnajy@gmail.com" class="social-icon" 
 target="_blank"
-rel="noopener noreferrer" ><img src="images/social/gmail.webp" alt="بريد إلكتروني"></a>
-    </div>
-    <div class="working-hours">⏰ مواعيد العمل: السبت - الخميس: 10:00 صباحاً - 1:00 ظهراً</div>
-    <div class="copyright-container">© 2026 جميع الحقوق محفوظة - عيادة الدكتور/ مختار الشرعبي --</div>
-  </footer>
+rel="noopener noreferrer" >
+          <img src="images/social/gmail.webp" alt="بريد إلكتروني" />
+        </a>
+      </div>
+      <div class="working-hours">⏰ مواعيد العمل: السبت - الخميس: 10:00 صباحاً - 1:00 ظهراً</div>
+      <div class="copyright-container">© 2026 جميع الحقوق محفوظة - عيادة الدكتور/ مختار الشرعبي -- </div>
+    </footer>
   <nav class="bottom-nav" id="responsiveNav">
     <div class="nav-container">
       <div class="nav-links-wrapper" id="navLinksWrapper"></div>
