@@ -9,7 +9,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="عيادة د. مختار الشرعبي | أنف وأذن وحنجرة - تعز">
   <meta property="og:description" content="يمكنك الآن الحجز المباشر في عيادة د. مختار الشرعبي بتعز - مفرق ماوية. خدمات تخصصية بأحدث التجهيزات.">
-  <meta property="og:image" content="https://drmsharabi.com/images/clinic-logo.png">
+  <meta property="og:image" content="https://drmsharabi.com/images/clinic-logo.webp">
   <meta property="og:url" content="https://drmsharabi.com/contact">
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
@@ -64,28 +64,40 @@
     }
     /* ---------- root variables (موحدة من الصفحات السابقة) ---------- */
     :root {
-      --primary-color: #052F49;
-      --secondary-color: #01849F;
-      --accent-color: #005464;
-      --light-color: #B4E4F6;
-      --light1-color: #E8FEFF;
-      --dark-color: #032E3B;
-      --tertiary-color: #fffde7;
+      
       --text-color: #333;
       --green-color: #00CFD8;
-      --border-color: #eab308;
-      --body-color: #f1f5f9;
-      --link-color: #0080B0;
-      --red-color: #c2005b;
+      -
+
+    
+      --red-color: #F6559B;
       --primary-dark: #01056D;
-      --card-white: #FFF;
+      --card-white: #D9E0E8;
+    ;
       --shadow-bd: #0a32fae6;
       --tr: #a64edcff;
+      
+  
     }
+     :root {
+          --secondary-color: #007A9F;
+      --accent-color: #01849F;
+            --primary-color: #005B7F;
+             --tertiary-color: #006AB5;
+             --red-color: #F60C72;
+               --light-color: #00F2FF;
+      --light1-color: #DBFFFD;
+         --dark-color: #013358;
+         --body-color: #EEF7F2;
+         --border-color: #FFFA92;
+          --link-color: #0353B0;
+            --border-y:#FFDE7A;
+         
+     }
 
     /* ---------- body & background ---------- */
     body {
-      background: linear-gradient(145deg, #eef2f7 0%, #d9e0e8 100%);
+      background: var(--card-white);
       line-height: 1.6;
       color: #1a2c3e;
       margin: 0 !important;
@@ -105,38 +117,42 @@
   position: fixed;
   bottom: 16px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: none;
   width: 100%;
-  background: #199bc352;
-  background: rgb(254 235 255 / 0.55);
-  backdrop-filter: blur(1px);
-  border-radius: 60px;
-  box-shadow: 0 0 2px var(--shadow-bd);
-  min-height: 22px;
+  background:rgba(205,250,146,.3);
+  
+  backdrop-filter: blur(0.5px);
+  border-radius: 0;
+ 
+  min-height: 28px;
+  max-height: 28px;
   z-index: 1000;
   direction: rtl;
-  border: 1px solid #fff;
-  padding: 2px 7px;
+  border: 3px double var(--card-white);
+  padding: 0 12px;
   max-width: none;
   min-width: 100%;
 }
 
 @media (min-width: 750px) {
   .bottom-nav {
-    left: 0;
+    left: 0; max-height: 88px; min-height: 78px;
     right: 0;
+    height: 65;
     transform: translateX(1%);
-    min-width: 100%;
-    padding: 4px 9px;
+    min-width:none;
+    padding: 8px 9px;
     border: 6px double var(--card-white);
     box-shadow: 0 0 5px var(--shadow-bd);
-    max-width: none;
+  
+    max-width: 100%;
+    
   }
 }
 
 @media (min-width: 1024px) {
   .bottom-nav {
-    max-width: 95%;
+    max-width: none;
   }
 }
 
@@ -145,7 +161,7 @@
     left: 0 !important;
     right: 0;
     transform: none;
-    min-height: 22px;
+    min-height: 24px;
     max-width: none;
     padding: 1px 10px;
     min-width: 100%;
@@ -179,109 +195,121 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  height: 28px;
   line-height: 1;
-  margin: 2px;
+  padding: 5px;
   box-sizing: border-box;
   vertical-align: middle;
 }
 
 .nav-link {
-  background: var(--light1-color);
-  color: var(--primary-dark);
+  background: var(--tertiary-color);
+  color: white;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 600;
-  box-shadow: 0 0 0 0 white;
-  padding: 2px 14px;
-  border-radius: 40px;
+max-height:24px;
+  padding: 4px 14px;
+  border-radius: 20px;
   white-space: nowrap;
   gap: 4px;
-  border: 0.5px solid var(--accent-color);
+  border: 0.5px solid white;
 }
 
 @media (min-width: 750px) {
-  .nav-link {
-    font-size: 28px !important;
-    padding: 9px 11px;
-    height: 60px;
+    
+
+  .nav-link {margin: 0 15px ;
+    font-size: 24px !important;
+    padding: 1px 21px!important;
+    height: 50px!important;
+    min-height: 52px!important;
     border: 2px solid var(--accent-color);
-    margin-left: 23px;
   }
 }
 
 @media (max-width: 480px) {
-  .nav-link {
-    font-size: 7px !important;
-    padding: 2px 10px !important;
-    max-height: 22px;
+  .nav-link {margin: 0 5px ;
+    font-size: 10px ;
+    padding: 5px 10px ;
+    max-height: 19px;
   }
 }
 
 .nav-link.active, .nav-link:hover {
-  background-color: var(--red-color) !important;
+  background-color: var(--tr) ;
   color: white;
-  box-shadow: 0 0 3px var(--shadow-bd);
-  border: 1px solid white;
+  box-shadow: 0 0 3px blue;
+  border: 0.5px solid white;
 }
 
 .more-btn {
-  background: #fff;
-  border: 1px solid #0000001a;
-  font-size: 24px;
+    background: var(--body-color);
+  font-size: 22px;
   cursor: pointer;
-  font-weight: 700;
-  color: var(--accent);
-  padding: 0 12px;
-  border-radius: 40px;
-  min-width: 54px;
+
+ color: var(--tr); 
+ 
+
+  min-width: 9px; 
+  border-radius: 5px;
+    max-height: 22px;
+    box-shadow: 0 0 2px blue;
+    font-weight: bold;
+  border: 1px solid white;
+    padding:0 1px 3px 1px ;
 }
 
 @media (min-width: 750px) {
-  .more-btn {
-    min-width: 38px;
-    font-size: 48px;
-    padding: 9px 12px !important;
-    height: 60px;
+  .more-btn { max-height: 100px;
+    min-width: 58px;
+    font-size: 58px;
+    border-radius: 20%;
+    padding: 0 1px 3px 1px;
+    height: 60px; border: 2px solid white;
+    margin: 0;
+    width: 40px;
   }
 }
 
 @media (max-width: 480px) {
   .more-btn {
     max-height: 22px;
-    min-width: 14px;
-    font-size: 14px !important;
-    padding: 2px 5px !important;
+    min-width: 9px;
+    font-size: 24px ;
+    padding: 0 1px 3px 1px
+    
+    ;
   }
 }
 
 .more-btn:hover {
-  background: var(--primary-light);
-  color: #fff;
+  background: var(--primary);
+  color: red;
 }
 
 .dropdown-menu {
   position: absolute;
   bottom: 60px;
   left: 0;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px #0003;
+  background: white;
+  border-radius: 2px;
   padding: 8px 0;
   min-width: 180px;
   z-index: 2000;
   display: none;
   flex-direction: column;
   gap: 4px;
-  border: 1px solid var(--border-light);
+ 
   direction: rtl;
 }
 
 .dropdown-menu a {
+   
   padding: 10px 20px;
-  text-decoration: none;
-  color: var(--primary-dark);
-  font-weight: 600;
+  text-decoration: underline;
+  color: var(--tertiary-color);
+  font-weight: 500;
   white-space: nowrap;
 }
 
@@ -291,8 +319,8 @@
   }
 }
 
-.dropdown-menu a:hover {
-  background: var(--gray-bg);
+.dropdown-menu :active {
+  background: var(--red-color);
   color: var(--primary);
 }
 
@@ -345,7 +373,7 @@
     .main-title {
       font-size: 13px;
       font-weight: 700;
-      color: var(--tertiary-color);
+      color: var(--border-color);
       white-space: nowrap;
     }
 
@@ -357,7 +385,7 @@
 
 .sub-title {
   font-size: 12px;
-  color: var(--light-color);
+  color: var(--light1-color);
   white-space: nowrap;
 }
 
@@ -438,7 +466,7 @@
     }
 
     /* ---------- main container (موحد) ---------- */
-    .main {
+    .warning-box {
       background-color: #fff;
       border-radius: 15px;
       padding: 20px;
@@ -462,7 +490,7 @@
       box-shadow: 0 0 6px #035f6199;
       border-radius: 12px;
     }
-    /* ---------- warning box & subsection (موحدة) ---------- */
+    
     .warning-box {
       background-color: #fffde7;
     display: flex;
@@ -482,14 +510,16 @@
         max-width: 99%;
         margin: 0 25px 15px;
       }}
-      
+        
+
     .main-image{width:100%;max-width:700px;height:auto;display:block;margin:20px auto;border-radius:12px; border: 1px solid black;}
     
-.main-h{border-right:2px solid var(--gray-bg);margin:0 20px;padding:15px 25px!important;background:#fff;box-shadow:var(--shadow-sm);align-content:center;justify-content:center; text-align: center;   }
+.main-h{border-right:2px solid var(--card-white);margin:0 20px;padding:15px 25px!important;background:#fff;
+;align-content:center;justify-content:center; text-align: center;   }
 .main-h img {
-    display: inline-block;    /* أو inline، لكن block أفضل */
-    margin: 0 auto;           /* لا يعمل إلا مع block */
-     border: 3px double var(--light-color);padding:15px 25px}
+    display: inline-block; 
+    margin: 0 auto;  
+     border: 3px double var(--card-white);padding:15px 25px}
     @media (min-width: 750px) {
       .main-image{margin:30px auto;border-radius:32px
           
@@ -498,34 +528,37 @@
       .main-h{margin:0 30px;padding:15px 45px;}
     }
 
-    .subsection {
-      background-color: white;
+    .main-section {
+       border: 0.5px groove var(--card-white);
+   
       padding: 10px 15px;
       margin: 10px 10px;
-      border-radius: 15px;
-      box-shadow: 0 0 14px rgba(111,130,111,.3);    text-align: center;
+      border-radius: 1px;
+      box-shadow: 0 0 14px rgba(111,130,111,.03);    text-align: center;
+          background: #fff;
+      
     }
 
     @media (min-width: 750px) {
-      .subsection {
+      .main-section {
         font-size: 26px;
-        border-radius: 40px;
+        border-radius: 10px;
         padding: 20px;
         margin: 15px 20px;
       }
     }
-
-    .subsection strong {
+.main-section:before{content:" ";position:relative;top:-15px;right:10%;background:linear-gradient(55deg,var(--light-color),var(--body-color),red);color:var(--text-muted);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;border:1px solid var(--primary)}
+    .main-section strong {
       font-size: inherit;
     }
 
     /* ---------- booking container (موحد مع الصفحات السابقة) ---------- */
     .booking-container {
       background: linear-gradient(to left, var(--secondary-color), var(--accent-color));
-      border: 1px solid #80E9FF;
-      border-right: 5px solid #ffc107;
-      box-shadow: 0 0 6px #035f6199;
-      border-radius: 38px 0 38px 0;
+      border: 3px double var(--light1-color);
+     
+    
+      border-radius: 8px 0 8px 0;
       padding: 20px 5px;
       margin: 20px 10px;
     }
@@ -556,10 +589,11 @@
 
     .booking-subtitle {
       font-weight: 700;
-      color: #fff;
+      color: #F8F8FF;
       font-size: 11px;
       text-align: center;
-      margin-bottom: 15px;
+      margin: 15px 60px;
+      line-height: 2;
     }
 
     @media (min-width: 750px) {
@@ -606,7 +640,7 @@
       padding: 1px 16px;
       font-weight: 700;
       font-size: 14px;
-      box-shadow: 0 2px 6px #215f61b3;
+      box-shadow: 1px 2px 2px #215f61b3;
       border-radius: 10px;
       text-decoration: none;
       transition: all 0.3s ease;
@@ -617,69 +651,32 @@
       .booking-button {
         font-size: 31px;
         padding: 4px 22px;
-        margin: 30px auto;
+        margin: 30px 60px;
         border-radius: 20px;
       }
     }
 
-    .booking-button.sms {
-      background-color: #f0fafa;
-      color: #000;
-      border: 2px solid #009688;
-      animation: example 2s infinite;
-    }
-
-    .booking-button.whatsapp {
-      background-color: #f0fafa;
-      color: #000;
-      border: 2px solid #009688;
-      animation: example2 2s 3s infinite;
-    }
-
-    @keyframes example {
-      0% { opacity: 1; }
-      20% { opacity: 1; }
-      40% { background-color: #FF86BB; opacity: 1; }
-      50% { opacity: 0; }
-      70% { background-color: #7FFCFF; opacity: 1; }
-      80% { opacity: 1; }
-      100% { background-color: #7FFCFF; opacity: 1; }
-    }
-
-    @keyframes example2 {
-      0% { opacity: 1; }
-      20% { opacity: 1; }
-      40% { background-color: #FF86BB; opacity: 1; }
-      50% { opacity: 0; }
-      70% { background-color: #7FFCFF; opacity: 1; }
-      80% { opacity: 1; }
-      100% { background-color: #7FFCFF; opacity: 1; }
-    }
-
-    .booking-icon {
-      width: 30px;
-      height: 30px;
-      border: 0.1px solid #009688;
-      box-shadow: 0 9px 6px #215f61b3;
-      margin: 4px auto 0;
-      border-radius: 5%;
-      animation: pulse 2s infinite;
-      display: inline-block;
-      vertical-align: middle;
-      margin-left: 5px;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-
-    @media (min-width: 750px) {
-      .booking-icon {
-        width: 58px;
-        height: 58px;
+    .booking-button.sms,  .booking-button.whatsapp {
+       background: var(--border-y);
+      color: black;
+      padding: 1px 4px;
+      border: 1px solid var(--accent-color);
+            box-shadow: 1px 1px 1px var(--body-color);
       }
+
+
+   
+
+ 
+    @media (min-width: 750px) {
+     
+        .booking-button.sms,  .booking-button.whatsapp {
+     font-size: 20px;
+      padding: 1px 4px;
+      border: 2px solid var(--tertiary-color);
+            box-shadow: 2px 2px 0 var(--border-color);
+      }
+
     }
 
     /* ---------- CTA button (موحد) ---------- */
@@ -693,20 +690,16 @@
       text-align: center;
       text-decoration: none;
       cursor: pointer;
-      background: linear-gradient(135deg, var(--link-color), var(--dark-color));
+      background: var(--tr);
       color: #fff;
       border: 1px solid #fff;
       border-radius: 10px;
-      box-shadow: 0 6px 12px #0d476fcc;
-      transition: all 0.3s ease;
+      box-shadow: 1px 2px 2px #0d476fcc;
+     
       margin: 20px auto;
     }
 
-    .cta-button:hover {
-      background-color: var(--text-color);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 18px #0d476f26;
-    }
+  
 
     @media (min-width: 750px) {
       .cta-button {
@@ -744,7 +737,7 @@
     }
 footer {
   border-top: 4px solid #fff;
-  background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
   color: #fff !important;
 
   text-align: center;
@@ -765,7 +758,7 @@ footer {
 
 .address-card {
   max-width: 90%;
-background: linear-gradient(35deg, var(--primary-color), var(--accent-color));
+background: linear-gradient(35deg, var(--primary-color), var(--tertiary-color));
   padding: 2px 10px;
   border-block: 0.5px solid #fff;
   display: inline-block;
@@ -811,7 +804,7 @@ background: linear-gradient(35deg, var(--primary-color), var(--accent-color));
   }
 }
 
-.working-hours{display:inline-block;padding:6px 25px!important;font-size:12px;font-weight:600;margin:10px auto;border-radius:25px;text-align:center; background-color: #ff0;  color: var(--text-color);}
+.working-hours{display:inline-block;padding:6px 25px!important;font-size:12px;font-weight:600;margin:10px auto;border-radius:25px;text-align:center; background-color: var(--light-color);  color: var(--text-color);}
 
 @media (max-width: 480px) {
   .working-hours {
@@ -903,13 +896,14 @@ background: linear-gradient(35deg, var(--primary-color), var(--accent-color));
         font-size: 12px;
         padding: 6px 12px;
       }
-      .subsection strong {
+      .main-section strong {
         font-size: 12px;
       }
     }
      .certificate-link a{
         text-decoration: underline;
     }
+   
   </style>
 </head>
 <body>
@@ -950,7 +944,7 @@ background: linear-gradient(35deg, var(--primary-color), var(--accent-color));
       
     </div><br><br>
 
-    <div class="subsection">
+    <div class="main-section">
       <h2>العنوان :</h2>
       <p>تعز، ركن مفرق ماوية، الشارع العام، مبنى مختبرات دار الصحة</p>
       
@@ -960,19 +954,7 @@ background: linear-gradient(35deg, var(--primary-color), var(--accent-color));
       </div>
 
     <br>
-    <div class="booking-container">
-      <div class="booking-title">📞 للحجز في عيادة دكتور مختار الشرعبي</div>
-      <div class="booking-subtitle">أرسل الإسم برسالة على الأرقام</div>
-      <div class="booking-numbers">📱 730433592 &nbsp;&nbsp;|&nbsp;&nbsp; 777421224</div>
-      <div class="booking-buttons">
-      
-<a href="sms:730433592?body=أريد حجز موعد" class="booking-button sms" aria-label="مراسله عبر  رسالة نصية ">📩 رسالة نصية</a>
-<a href="https://wa.me/967730433592?text=أريد%20حجز%20موعد" class="booking-button whatsapp" target="_blank" rel="noopener noreferrer"  aria-label="مراسلة مراسله عبر الواتساب ">💬 واتساب</a>
-      </div>
-    </div>
-
-    <br>
-    <div class="subsection">
+    <div class="main-section">
       <h2>الموقع الالكتروني للعيادة:</h2>
       <div class="certificate-link">
         <a href="https://drmokhtarent.org" 
@@ -994,15 +976,29 @@ target="_blank"
 rel="noopener noreferrer" >https://drmsharabi.com</a>
       </div>
     </div>
+ <br>  <div class="main-section">
+        <div class="booking-container">
+        <div class="booking-title">📩 للحجز والاستفسارات غير الطبية</div>
 
-    <br>
+        <div class="booking-subtitle" style="margin-bottom: 20px">
+          أرسل الإسم ويوم الحضور برسالة نصية أو واتساب على الأرقام:
+        </div>
+ 
+      <div class="booking-numbers">📱 730433592 &nbsp;&nbsp;|&nbsp;&nbsp; 777421224</div>
+      <div class="booking-buttons">
+      
+<a href="sms:730433592?body=أريد حجز موعد" class="booking-button sms" aria-label="مراسله عبر  رسالة نصية ">📩 رسالة نصية</a>
+<a href="https://wa.me/967730433592?text=أريد%20حجز%20موعد" class="booking-button whatsapp" target="_blank" rel="noopener noreferrer"  aria-label="مراسلة مراسله عبر الواتساب ">💬 واتساب</a>
+      </div>
+    </div>
+
     <div class="main" style="text-align: center;">
       <iframe class="map" src="https://maps.google.com/maps?q=عيادة د. مختار الشرعبي تعز&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="خريطة توضح موقع عيادة د. مختار الشرعبي في تعز"></iframe>
       <div style="text-align: center;">
         <a href="https://maps.app.goo.gl/QkJ4ynAf3jjxdw8W6" class="cta-button" 
 target="_blank"
 rel="noopener noreferrer" >العرض على خرائط جوجل</a>
-      </div>
+      </div> </div>
     </div>
 
     <br>
@@ -1062,18 +1058,24 @@ rel="noopener noreferrer" >
   <nav class="bottom-nav" id="responsiveNav">
     <div class="nav-container">
       <div class="nav-links-wrapper" id="navLinksWrapper"></div>
-      <button class="more-btn" id="moreBtn" style="display: none">☰</button>
-      <div class="dropdown-menu" id="dropdownMenu"></div>
+       <button class="more-btn" id="moreBtn" style="display: none">
+<span >▲</span></button>
+ <div class="dropdown-menu" id="dropdownMenu"></div><button class="more-btn" id="moreBtn" style="display: none">
+  <span >▼</span>
+</button>
+
     </div>
   </nav>
   <script>
     const allNavItems = [
-      { text: "🏠 الرئيسية", link: "index.html", active: false },
-      { text: "💬️ تواصل_معنا ", link: "contact.html", active: true },
-      { text: "📸 معرض_الصور", link: "gallery.html" },
-      { text: "📚 عن_العيادة", link: "about.html" },
-      { text: "⭐ التقييمات", link: "testimonials.html" },
-      { text: "❓️ أسئلة_شائعة", link: "q&a.html" },
+      { text: "الرئيسية", link: "index.html", active: false },
+      { text: " تواصل_معنا ", link: "contact.html", active: true },
+     { text: "المدونة ", link: "blog.html"},
+     
+    { text: " معرض_الصور", link: "gallery.html" },
+     { text: " عن_العيادة", link: "about.html" },
+     { text: "⭐ التقييمات", link: "testimonials.html" },
+    { text: " أسئلة_شائعة", link: "q&a.html" },
     ];
 
     const wrapper = document.getElementById("navLinksWrapper");
@@ -1163,10 +1165,30 @@ rel="noopener noreferrer" >
       if (hidden.length === 0) moreBtn.style.display = "none";
     }
 
+        // ابحث عن هذا الجزء في أسفل الكود واستبدله بالتالي:
     moreBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       dropdown.classList.toggle("show");
+      
+      // كود ديناميكي لتغيير اتجاه السهم الأزرق حسب حالة القائمة
+      const arrowSpan = moreBtn.querySelector("span");
+      if (dropdown.classList.contains("show")) {
+        arrowSpan.innerText = "▲"; // سهم لأعلى عند الفتح
+      } else {
+        arrowSpan.innerText = "▼"; // سهم لأسفل عند الإغلاق
+      }
     });
+
+    document.addEventListener("click", (event) => {
+      if (!moreBtn.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.classList.remove("show");
+        
+        // إرجاع السهم لأسفل إذا تم الإغلاق بالضغط خارج القائمة
+        const arrowSpan = moreBtn.querySelector("span");
+        if (arrowSpan) arrowSpan.innerText = "▼";
+      }
+    });
+
     document.addEventListener("click", (event) => {
       if (!moreBtn.contains(event.target) && !dropdown.contains(event.target)) {
         dropdown.classList.remove("show");
@@ -1175,5 +1197,6 @@ rel="noopener noreferrer" >
     window.addEventListener("resize", () => adjustNavbar());
     adjustNavbar();
   </script>
+  
 </body>
 </html>>
