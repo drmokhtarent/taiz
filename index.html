@@ -25,10 +25,13 @@
     />
     <meta property="og:url" content="Https://drmsharabi.com/" />
     <meta property="og:image" content="Https://drmsharabi.com/images/clinic-logo.webp" />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="صورة شعار عيادة د. مختار الشرعبي" />
-    <meta property="og:image:width" content="167" />
-    <meta property="og:image:height" content="176" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:alt" content="صورة شعار عيادة د. مختار الشرعبي"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:image:width" content="85" />
+    <meta property="og:image:height" content="85" />
  <link
  rel="preload"
  href="/Font/Cairo-Bold.ttf"
@@ -135,24 +138,25 @@
   :root {
       
       --text-color: #333;
-      --green-color: #00CFD8;
+      --green-color: #00C7A2;
       -
 
     
-      --red-color: #F6559B;
+      --red-color: #BC0052;
       --primary-dark: #01056D;
       --card-white: #D9E0E8;
     ;
-      --shadow-bd: #0a32fae6;
-      --tr: #a64edcff;
+     
+      --tr: #8E00CF;
       
   
    
           --secondary-color: #007A9F;
       --accent-color: #01849F;
             --primary-color: #005B7F;
+             --shadow-bd: #0a32fae6;
              --tertiary-color: #006AB5;
-             --red-color: #F60C72;
+             --red-color: #BC0052;
                --light-color: #00F2FF;
       --light1-color: #DBFFFD;
          --dark-color: #013358;
@@ -179,6 +183,157 @@ body {
     padding: 0 0 103px 0 !important;
   }
 }
+/* --- الأنماط الأساسية للشريط (الهاتف أولاً) --- */
+.bottom-nav {
+  position: fixed;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(205, 250, 146, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(1px);
+  
+  z-index: 1000;
+  direction: rtl;
+  border: 3px double var(--card-white);
+  padding: 1px 10px;
+  box-sizing: border-box;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 100%;
+  gap: 8px;
+}
+
+.nav-links-wrapper {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex: 1;
+  min-width: 0; /* منع الـ Flexbox من دفع الصندوق خارج الحدود */
+  flex-wrap: nowrap;
+  overflow-x: auto; /* ميزة أمان: إذا زاد حجم العنصر لا يخرج بل يظهر شريط تمرير مخفي */
+  scrollbar-width: none; 
+}
+.nav-links-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-link {
+  background: var(--tertiary-color);
+  color: white;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  border: 0.5px solid white;
+  flex-shrink: 0; /* تمنع المتصفح من ضغط أو تشويه حجم الزر */
+}
+
+.nav-link.active, .nav-link:hover {
+  background-color: var(--tr);
+  color: white;
+  box-shadow: 0 0 5px blue;
+}
+
+.more-btn {
+  background: var(--body-color);
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--tr);
+  border-radius: 5px;
+  box-shadow: 0 0 2px blue;
+  font-weight: bold;
+  border: 1px solid white;
+  padding: 0 0 1px 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;  max-height: 28px;
+
+}
+
+.dropdown-menu {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background: white;
+  border-radius: 6px;
+  padding: 6px 0;
+  min-width: 160px;
+  z-index: 2000;
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  direction: rtl;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+}
+
+.dropdown-menu a {
+  padding: 8px 16px;
+  text-decoration: none;
+  color: var(--tertiary-color);
+  font-weight: 500;
+  white-space: nowrap;
+  font-size: 14px;
+}
+.dropdown-menu a:hover {
+  background: var(--red-color);
+  color: var(--light1-color);
+}
+.dropdown-menu.show {
+  display: flex;
+}
+
+/* --- الشاشات المتوسطة والكبيرة (Tablets & Desktops) --- */
+@media (min-width: 750px) {
+  .bottom-nav {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 950px; 
+    bottom: 15px;
+    border-radius: 15px;
+    padding: 12px 20px;
+    border: 4px double var(--card-white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+
+  .nav-link {
+    font-size: 15px; /* تم تعديله من 24px (الضخمة جداً) إلى 15px ليتوافق مع الحسابات */
+    margin: 0;       /* تم تصفير المارجن والاعتماد على الـ gap البرمجي */
+    padding: 13px 16px;
+  }
+
+  .more-btn {
+    font-size: 1.2rem;
+    padding: 0 0 3px 0;
+  }
+
+  .dropdown-menu {
+    bottom: 120%;
+    min-width: 180px;
+  }
+  
+  .dropdown-menu a {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+
+
    header {
       margin-bottom: 4px;
       background: linear-gradient(to left, var(--secondary-color), var(--accent-color));
@@ -192,6 +347,7 @@ body {
       gap: 18px;
       border-radius: 0 0 15px 15px;
       box-shadow: 0 13px 6px #001f3366;
+ 
     }
 
     @media (min-width: 750px) {
@@ -213,18 +369,26 @@ body {
         border: 2px solid #A8FFEF;
       }
     }
-
+ @media (max-width: 480px) {
+.header-logo img {
+        height: 45px;
+      width: auto;
+        
+      }
+    }
     .header-text {
       display: flex;
       line-height: 2.2;
       flex-direction: column;
       align-items: flex-start;
+      
+      
     }
 
     .main-title {
       font-size: 13px;
       font-weight: 700;
-      color: var(--border-color);
+      color: var(--border-y);
       white-space: nowrap;
     }
 
@@ -233,7 +397,12 @@ body {
         font-size: 29px;
       }
     }
-
+    @media (max-width: 480px) {
+      .main-title {
+        font-size: 11px;
+        
+      }
+    }
 .sub-title {
   font-size: 12px;
   color: var(--light1-color);
@@ -245,7 +414,12 @@ body {
     font-size: 28px;
   }
 }
-
+ @media (max-width: 480px) {
+      .sub-title {
+        font-size: 10px;
+        
+      }
+    }
     /* ---------- headings & text (موحدة) ---------- */
     h1 {
       background-color: #fff;
@@ -429,7 +603,7 @@ body {
     
      
       padding: 3px 16px;
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 600;
       text-align: center;
       text-decoration: none;
@@ -499,7 +673,7 @@ background: linear-gradient(35deg, var(--primary-color), var(--accent-color));
 
 @media (min-width: 750px) {
   .address-card {
-    font-size: 28px !important;
+    font-size: 28px ;
     margin: 10px auto;
     padding: 10px 40px !important;
     border-radius: 0 0 40px 40px;
@@ -508,7 +682,7 @@ background: linear-gradient(35deg, var(--primary-color), var(--accent-color));
 
 @media (max-width: 480px) {
   .address-card {
-    font-size: 10px;
+    font-size: 10px;;
     padding: 6px 12px;
     margin: 8px auto;
     max-width: 95%;
@@ -893,29 +1067,6 @@ hr {
   overflow: visible;    background: #0D88AF;
 }
 
-@media (min-width: 750px) {
-  .profile-section {
-    display: flex;
-    
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    padding: 1px;
-    margin: 20px 15px;
-    
-    gap: 5px;
-
-    
-    background: var(--light-color);
-    border-radius: 10px; 
-    width: 95%;
-    max-width: 1000px;
-    padding: 5px ;
-        margin: 20px auto;
-    overflow: hidden;
-      border: 4px double var(--link-color);
-  }
-}
 
 .profile-image img {
   width: 100%;
@@ -933,40 +1084,6 @@ hr {
     overflow: hidden;
     border: 1px solid white;  border-right:  9px solid var(--link-color);
     
-}
-@media (min-width: 750px) {
-  .profile-image {
-    flex: 0 0 40%;
-    flex:1 1 50%;margin-left:0;padding:5px;
-    display: flex;
-  
-    align-items: center;
-    margin: 3px;
-
-    padding: 2px;
-    border-radius: 30px 10px 10px 30px;
-    background-color:#fff;
-    border: 3px solid var(--line-color);
-    border-left: 1px solid var(--light-color);
-     overflow: hidden;  box-shadow: 0 0 4px rgba(0, 50, 0, 0.9);
-  }
-
-  .profile-image img {
-    width: 90%;
-    height: auto;
-    max-height: 100%;
-    background-color: #00CFD8;
-   border-radius:0;  
-   
-        
-   
-  }
-}
-
-@media (max-width: 767px) {
-  .profile-image img {
-    transform: translateX(10px);
-  }
 }
 
 .profile-text {
@@ -986,30 +1103,7 @@ hr {
 }
 
 
-@media (min-width: 750px) {
-  .profile-text {
-      flex: 1 1 auto;  
-        max-width: 55%;  
-           min-width: 0;  
-            word-break: break-word; 
-    padding: 10px;
-    border-radius: 4px 50px 20px 4px;
-    margin: 5px -20px 5px 5px;
-    border: 5px solid  var(--link-color);
-    border-left: 9px solid var(--link-color);
-    border-right: 1px solid var(--light-color);
-  }
 
-  .profile-text h2 {
-    font-size: 26px!important;
-    margin: 10px;
-  }
-
-  .profile-text p {
-    font-size: 19.5px !important;
-      line-height: 1.9
-  }
-}
 
 .profile-text h2 {
   font-size: 15px;
@@ -1017,7 +1111,112 @@ hr {
   padding-bottom: 2px;
   padding-top: 5px;
 }
+/* =========================
+   Desktop / Tablet Layout
+========================= */
+@media (min-width: 750px) {
 
+  .profile-section{
+    display:flex;
+    flex-direction:row;
+    align-items:stretch; /* يجعل العمودين بنفس الارتفاع */
+    justify-content:space-between;
+
+    width:95%;
+    max-width:1000px;
+
+    margin:20px auto;
+    padding:8px;
+    gap:10px;
+
+    background:var(--light-color);
+    border-radius:12px;
+    border:4px double var(--link-color);
+
+    overflow:hidden;
+  }
+/* حل تشوه Firefox */
+.profile-image img{
+  
+}
+
+  /* نصف الصفحة للصورة */
+  .profile-image{
+  
+flex:0 0 50%;
+  max-width:50%;
+    display:flex;
+    align-items:stretch;
+    justify-content:center;
+
+    margin:0;
+    padding:6px;
+
+    background:#fff;
+
+    border-radius:25px 10px 10px 25px;
+    border:3px solid var(--line-color);
+    border-left:1px solid var(--light-color);
+
+    overflow:hidden;
+    box-shadow:0 0 4px rgba(0,50,0,.25);
+  }
+
+  /* الصورة تملأ العمود بالكامل */
+  .profile-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    margin:0;
+    padding:0;
+
+    display:block;
+
+    border-radius:0;
+    border:none;
+    background:none;
+  }
+
+  /* نصف الصفحة للنص */
+  .profile-text{
+    flex:1 1 50%;
+    width:50%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    margin:0;
+    padding:18px;
+
+    background:#E4FAFF;
+
+    border-radius:5px 40px 20px 5px;
+
+    border:5px solid var(--link-color);
+    border-left:9px solid var(--link-color);
+    border-right:1px solid var(--light-color);
+
+    box-sizing:border-box;
+
+    min-width:0;
+    overflow:hidden;
+  }
+
+  .profile-text h2{
+    font-size:26px !important;
+    margin:0 0 12px;
+  }
+
+  .profile-text p{
+    font-size:19px !important;
+    line-height:1.9;
+    margin:0;
+  }
+
+}
 .main-image {
   width: 70% !important;
   max-width: 600px;
@@ -1262,7 +1461,7 @@ hr {
 
 .experience-header h2 {
   color: var(--border-y);
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: -0.3px;
   display: flex;
@@ -1273,17 +1472,18 @@ hr {
   white-space: nowrap;
 }
 
-@media (max-width: 750px) {
+
+@media (min-width: 750px) {
   .experience-header h2 {
     white-space: normal;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: 1.9rem;
   }
 }
-
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .experience-header h2 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+      white-space: normal;
   }
 }
 
@@ -1297,11 +1497,17 @@ hr {
 
 .subhead {
   color: var(--body-color);
-  font-size: 1.2rem;
+  font-size:10px!important;
   margin: 0;
   font-weight: 500;
   text-align: right;
-  padding-left: 1rem;
+  padding-left: 12px;
+}
+@media (max-width: 767px) {
+  .subhead  {
+    font-size: 1.4rem;
+      
+  }
 }
 
 @media (max-width: 750px) {
@@ -1309,25 +1515,40 @@ hr {
     border-left: none;
     border-right: 3px solid var(--light-color);
     padding: 0;
-    padding-right: 1rem;
-    text-align: center;
+    padding-right: 10px;
+
     font-size: 0.9rem;
   }
 }
-
+@media (max-width: 480px) {
+     .subhead {
+         font-size: 0.8rem;
+     }
+}
 .experience-list {
-  padding: 2rem 1.5rem;
-  background-color: white;
+  padding: 0 5px ;
+  background-color: var(--light1-color);
   border: 1px solid var(--secondary-color);
   margin:0 2px  10px 2px;
-   box-shadow: 0 0 11px var(--light-color);
+   box-shadow: 0 0 1px var(--light-color);
 
   border-top: 0;
+}
+.experience-list {
+  padding: 0 5px;
+  background-color: var(--light1-color);
+  border: 1px solid var(--secondary-color);
+  margin: 0 2px 10px 2px;
+  box-shadow: 0 0 1px var(--light-color);
+  border-top: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
 
 @media (min-width: 750px) {
   .experience-list {
-    padding: 2rem 1.5rem;
+    padding: 5px 9px;
     border-left: 13px solid var(--border-color);
     margin-top: 0;
     border: 4px solid var(--border-light);
@@ -1336,25 +1557,28 @@ hr {
 
 @media (max-width: 750px) {
   .experience-list {
-    padding: 1rem;
+    padding: 10px 3px;
   }
 }
 
 .exp-item {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  padding: 1px 7px 1.8rem;
-  background-color: transparent;
-  width: 100%;
+  gap:10px;
+  margin: 0!important;
+  padding: 21px 1px 0 1px;
+  background-color: var(--body-color);
+ 
+  height: auto;
+  border-bottom: 1px solid var(--primary-color);
+    width: 100%;  flex-wrap: wrap; 
 }
 
 @media (max-width: 750px) {
   .exp-item {
     flex-direction: column;
     gap: 0.8rem;
-    margin-bottom: 1.5rem;
+  
     padding-bottom: 1.2rem;
   }
 }
@@ -1362,13 +1586,12 @@ hr {
 .exp-date {
       border: 4px double white;
   flex: 0 0 180px;
-  background: var(--tr);
+  background: var(--tertiary-color);
   border-radius: 2rem;
-  padding: 0.1rem 0.5rem;
+  padding: 1px3px;
   text-align: center;
   align-self: flex-start;
-  font-weight: 700;
-  font-size: 1rem;
+ font-size: 12px;
   color: white;
   display: inline-flex;
   align-items: center;
@@ -1381,19 +1604,19 @@ hr {
   .exp-date {
     flex: none;
     width: fit-content;
-    font-size: 0.85rem;
-    padding: 0.4rem 1rem;
+    font-size: 90%;
+    padding: 2px 9px;
     margin-top: 0;
   }
 }
 
 @media (min-width: 750px) {
   .exp-date {
-    margin-top: 145px;
+    margin-top: 95px;
    ;
     padding-right: 1rem;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 112%;
      font-size:24px!important;
     padding: 3px 10px!important;
     border: 2px  outset var(--primary-light); 
@@ -1404,32 +1627,38 @@ hr {
 .exp-content {
   flex: 1;
   min-width: 200px;
+  
 }
 
 .exp-title {
-  font-size: 1.25rem;
+  font-size:14px;
   font-weight: 800;
   color: var(--red-color);
-  margin-bottom: 1.4rem;
+  margin-bottom: 14px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.65rem;
   text-shadow: 1px 1px 2px white;
 
+  overflow-wrap: anywhere; 
+ 
+    box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word; 
+  word-break: break-word;
+
 }
 
-@media (min-width: 750px) {
+@media (max-width: 748px) {
   .exp-title {
-    font-size: 1.85rem !important;
+    font-size: 12px;
   }
-}
-
-@media (max-width: 750px) {
-  .exp-title {
-    font-size: 1.15rem;
-  }
-}
+  .exp-content {
+     width: 100%;
+    min-width: 0;
+}}
 
 @media (max-width: 480px) {
   .exp-title {
@@ -1437,38 +1666,84 @@ hr {
   }
 }
 
-.exp-description {
-  font-size: 1rem;
+
+@media (min-width: 750px) {
+  .exp-title {
+    font-size: 1.2rem!important;
+  }
+}.exp-description {
+    font-size: 0.8rem
   font-weight: 500;
   color: #2c475c;
-  padding: 0.75rem 1rem;
-  border-radius: 1.25rem 0 1.25rem 0;
-    border: 1px solid var(--card-white);
+  padding: 8px 12px; /* زيادة الحشو الداخلي لمنع التصاق النص بالحواف */
+  border-radius: 10px;
+  border: 2px solid var(--secondary-color);
   line-height: 1.65;
-  background-color: var(--light1-color);
-  box-shadow: 1px 1px 15px rgba(2555, 254, 250, 0.5);
-  margin: 0 15px 1px auto;
+  background-color: white;
+  box-shadow: 1px 1px 15px rgba(255, 254, 250, 0.5);
+  margin: 5px 3px;
+  
+  /* ترسانة الحماية الأمنية لمنع خروج النصوص نهائياً */
+  display: block;             /* إجبار العنصر على التصرف ككتلة مستقرة */
+  height: auto !important;    /* إلغاء أي ارتفاع ثابت قد يفرضه عنصر أب */
+  min-height: min-content;    /* جعل الارتفاع مرن بالحد الأدنى للمحتوى */
+  word-break: normal;         /* الحفاظ على الكلمات العربية سليمة والكسر عند المسافات */
+
+      box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  display: block;
+}
+
+/* لضمان السيطرة الكاملة في حال وجود أي وسم p بالخطأ */
+.exp-description p {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  display: inline;
+  
 }
 
 @media (max-width: 750px) {
   .exp-description {
-       border: 2px solid var(--card-white);
-    font-size: 0.9rem;
-    padding: 0.6rem;
+    border: 2px solid var(--card-white);
+    margin :3px auto;
+    font-size: 0.8rem;       /* وحدة مرنة متوافقة تماماً مع تكبير خط نظام التشغيل */
+    padding: 12px;
+    overflow: hidden;  
+    
   }
 }
 
 @media (max-width: 480px) {
   .exp-description {
-    font-size: 0.85rem;
+      font-size: 0.8rem; /* حجم مثالي ومقاوم للتشوه على الشاشات الصغيرة جداً */
+    margin: 8px 3px;
   }
 }
 
 @media (min-width: 750px) {
   .exp-description {
     margin: 20px auto;
+    font-size:20px;
+    width: 100%;
+    max-width: 100%; 
   }
 }
+
+
+
+
+
+
+/* --- تعديلات الميديا وعرض الشاشات لضمان التوافق التام --- */
+
+
+
+
 
 ::selection {
   background: #eab30840;
@@ -1484,219 +1759,36 @@ hr {
   margin: 20px auto;
   display: block;
 }
-.bottom-nav {
-  position: fixed;
-  bottom: 16px;
-  left: 50%;
-  transform: none;
-  width: 100%;
-  background:rgba(205,250,146,.5);
+    
+@media (max-width: 748px) {
+  main {
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    font-size: 90%;
+  }
+}
+
+
+@media (min-width: 750px) {
+ main {
+    font-size: 112%!important;
+  }
+}
+ p {
   
-  backdrop-filter: blur(1px);
-  border-radius: 0;
- 
-  min-height: 28px;
-  max-height: 28px;
-  z-index: 1000;
-  direction: rtl;
-  border: 3px double var(--card-white);
-  padding: 0 12px;
-  max-width: none;
-  min-width: 100%;
-}
-
-@media (min-width: 750px) {
-  .bottom-nav {
-    left: 0; max-height: 88px; min-height: 78px;
-    right: 0;
-    height: 65;
-    transform: translateX(1%);
-    min-width:none;
-    padding: 8px 9px;
-    border: 6px double var(--card-white);
-    box-shadow: 0 0 5px var(--shadow-bd);
+  font-size: inherit;
+  line-height: inherit;
   
-    max-width: 100%;
-    
-  }
 }
-
-@media (min-width: 1024px) {
-  .bottom-nav {
-    max-width: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .bottom-nav {
-    left: 0 !important;
-    right: 0;
-    transform: none;
-    min-height: 24px;
-    max-width: none;
-    padding: 1px 10px;
-    min-width: 100%;
-  }
-}
-
-.nav-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  position: relative;
-  width: auto;
-  min-height: 22px;
-}
-
-.nav-links-wrapper {
-  display: flex;
-  gap: 6px;
-  overflow-x: auto;
-  align-items: center;
-  flex: 1;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.nav-links-wrapper::-webkit-scrollbar {
-  display: none;
-}
-
-.more-btn, .nav-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 28px;
-  line-height: 1;
-  padding: 5px;
-  box-sizing: border-box;
-  vertical-align: middle;
-}
-
-.nav-link {
-  background: var(--tertiary-color);
-  color: white;
-  text-decoration: none;
-  font-size: 10px;
-  font-weight: 600;
-max-height:24px;
-  padding: 4px 14px;
-  border-radius: 20px;
-  white-space: nowrap;
-  gap: 4px;
-  border: 0.5px solid white;
-}
-
+.hero{background:var(--border-y);border-radius:0 0 18px 18px;padding:6px;margin: 24px auto!important;line-height:1.9;color:black;max-width:88%;text-align:center;border:5px double white;}
 @media (min-width: 750px) {
-    
+ .hero{font-size:24px;border-radius:18px 18px 0 0;padding:26px;margin:0 20px 20px 20px!;
 
-  .nav-link {margin: 0 15px ;
-    font-size: 24px !important;
-    padding: 1px 21px!important;
-    height: 50px!important;
-    min-height: 52px!important;
-    border: 2px solid var(--accent-color);
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-link {margin: 0 5px ;
-    font-size: 10px ;
-    padding: 5px 10px ;
-    max-height: 19px;
-  }
-}
-
-.nav-link.active, .nav-link:hover {
-  background-color: var(--tr) ;
-  color: white;
-  box-shadow: 0 0 3px blue;
-  border: 0.5px solid white;
-}
-
-.more-btn {
-    background: var(--body-color);
-  font-size: 22px;
-  cursor: pointer;
-
- color: var(--tr); 
- 
-
-  min-width: 9px; 
-  border-radius: 5px;
-    max-height: 22px;
-    box-shadow: 0 0 2px blue;
-    font-weight: bold;
-  border: 1px solid white;
-    padding:0 1px 3px 1px ;
-}
-
-@media (min-width: 750px) {
-  .more-btn { max-height: 100px;
-    min-width: 58px;
-    font-size: 58px;
-    border-radius: 20%;
-    padding: 0 1px 3px 1px;
-    height: 60px; border: 2px solid white;
-    margin: 0;
-    width: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .more-btn {
-    max-height: 22px;
-    min-width: 9px;
-    font-size: 24px ;
-    padding: 0 1px 3px 1px
-    
-    ;
-  }
-}
-
-.more-btn:hover {
-  background: var(--red-color);
-  color: white;
-}
-
-.dropdown-menu {
-  position: absolute;
-  bottom: 60px;
-  left: 0;
-  background: white;
-  border-radius: 2px;
-  padding: 8px 0;
-  min-width: 180px;
-  z-index: 2000;
-  display: none;
-  flex-direction: column;
-  gap: 4px;
- 
-  direction: rtl;
-}
-
-.dropdown-menu a {
-   
-  padding: 10px 20px;
-  text-decoration: underline;
-  color: var(--tertiary-color);
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-@media (min-width: 750px) {
-  .dropdown-menu a {
-    font-size: 25px;
-  }
-}
-
-.dropdown-menu :active {
-  background: var(--red-color);
-  color: var(--light1-color);
-}
-
-.dropdown-menu.show {
-  display: flex;
+ }
 }
 </style>
 
@@ -1795,7 +1887,7 @@ max-height:24px;
 <div class="experience-list">
 <!-- دكتوراه مهنية -->
 <div class="exp-item">
-<div class="exp-date" >
+<div class="exp-date">
 <i class="far fa-calendar-alt"></i>
 2016 – 2021
 </div>
@@ -1823,16 +1915,14 @@ max-height:24px;
 <div class="exp-title">
 <i class="fas fa-award"></i>
 شهادة الزمالة العربية (بورد عربي)
+</div><div class="exp-description">
+  <i class="fas fa-microscope" ></i>
+<p>شهادة دكتوراه مهنية متخصصة في مجال أمراض وجراحة ومناظير الأنف والأذن والحنجرة والرأس والعنق، تشمل التدريب الجراحي المتقدم، المناظير التشخيصية والعلاجية، وجراحات الرأس والعنق الدقيقة
+</p>    <a href="images/S-cert..jpg" class="certificate-link" target="_blank" rel="noopener noreferrer" aria-label="اطلع على صورة شهادة الدكتوراه المهنية">
+    <em> تدريب سريري وبحثي مكثف </em> 
+  </a> 
 </div>
-<div class="exp-description">
-<i class="fas fa-flag-checkered" style="margin-left: 0.5rem; color:#eab308;"></i><p>
-شهادة البورد العربي (بورد عربي) في أمراض وجراحة ومناظير الأنف والأذن والحنجـرة والرأس والعنق - سوريا -
-من المجلس العربي للاختصاصات الصحية ؛ اعتماد الجامعة العربية – تدريب متخصص وفق أعلى المعايير.</p>
-<a class="certificate-link" 
- href="images/B-cert..jpg" target="_blank" rel="noopener noreferrer" aria-label="اطلع على صورة شهادة البورد العربي">
-<i class="fas fa-hand-holding-heart"></i> <em> شهادة البورد العربي
-</em> </a> 
-</div>
+
 </div>
 </div>
 <!-- دورات عليا دولي 2019 -->
@@ -1959,7 +2049,7 @@ target="_blank" rel="noopener noreferrer"> <em> ️
     title="خريطة موقع العيادة">
   </iframe>
 </div>
-<div class="warning-box" style=" text-align: center; margin-top: 20px;">
+<div class="hero" style=" text-align: center; margin-top: 20px;">
 <em>
 “إذا كنت تبحث عن أفضل دكتور أنف وأذن وحنجرة في اليمن أو استشاري حنجرة موثوق في تعز، فإن
 <strong style="color: #d4177b;">الدكتور مختار الشرعبي</strong> هو خيارك الأمثل”
@@ -1978,7 +2068,7 @@ target="_blank" rel="noopener noreferrer"> <em> ️
 </div>
 
 </main>    <footer>
-      <div class="address-card">
+      <div class="address-card" >
         <span>ركن مفرق ماوية، مبنى مختبرات دار الصحة</span>
         ،
         <span>تعز</span>
@@ -2028,144 +2118,174 @@ rel="noopener noreferrer" >
   <nav class="bottom-nav" id="responsiveNav">
     <div class="nav-container">
       <div class="nav-links-wrapper" id="navLinksWrapper"></div>
-       <button class="more-btn" id="moreBtn" style="display: none">
-<span >▲</span></button>
- <div class="dropdown-menu" id="dropdownMenu"></div><button class="more-btn" id="moreBtn" style="display: none">
-  <span >▼</span>
-</button>
+ 
+    <button class="more-btn" id="moreBtn" style="display: none">  
+      <span>▲</span>
+    </button>  
+    
+    <!-- القائمة المنسدلة -->
+    <div class="dropdown-menu" id="dropdownMenu"></div>
+  </div>
+</nav>
 
     </div>
   </nav>
   <script>
-    const allNavItems = [
-      { text: "الرئيسية", link: "index.html", active: true },
-     { text: " عن_العيادة", link: "about.html" },
-      { text: " تواصل_معنا ", link: "contact.html" },
-     { text: "المدونة ", link: "blog.html"},
-     
-    { text: " معرض_الصور", link: "gallery.html" },
-     { text: "⭐ التقييمات", link: "testimonials.html" },
-    { text: " أسئلة_شائعة", link: "q&a.html" },
-    ];
+ const allNavItems = [  
+  { text: "الرئيسية", link: "index.html", active: true },  
+  { text: "عن_العيادة", link: "about.html" },  
+  { text: "تواصل_معنا", link: "contact.html" },  
+  { text: "مقالات_طبية", link: "blog.html" },  
+  { text: "معرض_الصور", link: "gallery.html" },  
+  { text: "⭐ التقييمات", link: "testimonials.html" },  
+  { text: "أسئلة_شائعة", link: "q&a.html" },  
+];  
 
-    const wrapper = document.getElementById("navLinksWrapper");
-    const moreBtn = document.getElementById("moreBtn");
-    const dropdown = document.getElementById("dropdownMenu");
+const wrapper = document.getElementById("navLinksWrapper");  
+const moreBtn = document.getElementById("moreBtn");  
+const dropdown = document.getElementById("dropdownMenu");  
 
-    function handleNavClick(e, url) {
-      e.preventDefault();
-      if (url.startsWith("http")) window.open(url, "_blank");
-      else window.location.href = url;
-    }
+function handleNavClick(e, url) {  
+  e.preventDefault();  
+  if (url.startsWith("http")) window.open(url, "_blank");  
+  else window.location.href = url;  
+}  
 
-    function adjustNavbar() {
-      if (!wrapper) return;
-      moreBtn.style.display = "none";
-      const containerRect = wrapper.parentElement.getBoundingClientRect();
-      let availableWidth = containerRect.width - 24;
+function adjustNavbar() {  
+  if (!wrapper || !moreBtn) return;  
+  
+  // إخفاء الزر مؤقتاً لعمل الحسابات بدقة
+  moreBtn.style.display = "none";  
+  
+  // قياس المساحة الإجمالية للحاوية الأب للتحكم بالحدود
+  const container = wrapper.parentElement;
+  if (!container) return;
+  let availableWidth = container.clientWidth;  
 
-      const tempWrapper = document.createElement("div");
-      tempWrapper.style.position = "absolute";
-      tempWrapper.style.visibility = "hidden";
-      tempWrapper.style.display = "flex";
-      tempWrapper.style.gap = "6px";
-      tempWrapper.style.whiteSpace = "nowrap";
-      document.body.appendChild(tempWrapper);
+  // إنشاء حاوية وهمية لقياس الأحجام الحقيقية للأزرار في نفس اللحظة
+  const tempWrapper = document.createElement("div");  
+  tempWrapper.style.position = "absolute";  
+  tempWrapper.style.visibility = "hidden";  
+  tempWrapper.style.display = "flex";  
+  // جلب الفجوة الديناميكية (gap) المحددة في الـ CSS لشاشة المستخدم الحالية
+  const currentGap = window.innerWidth >= 750 ? 6 : 6; 
+  tempWrapper.style.gap = currentGap + "px";  
+  tempWrapper.style.whiteSpace = "nowrap";  
+  
+  // إجبار الحاوية الوهمية على أخذ خصائص الشاشة الحالية
+  if(window.innerWidth >= 750) {
+      tempWrapper.style.fontSize = "15px";
+  } else {
+      tempWrapper.style.fontSize = "11px";
+  }
+  
+  document.body.appendChild(tempWrapper);  
 
-      const tempLinks = [];
-      allNavItems.forEach((item) => {
-        const link = document.createElement("a");
-        link.className = "nav-link";
-        link.innerText = item.text;
-        tempWrapper.appendChild(link);
-        tempLinks.push(link);
-      });
-      const widths = tempLinks.map(link => link.offsetWidth);
-      document.body.removeChild(tempWrapper);
+  const tempLinks = [];  
+  allNavItems.forEach((item) => {  
+    const link = document.createElement("a");  
+    link.className = "nav-link";  
+    link.innerText = item.text;  
+    tempWrapper.appendChild(link);  
+    tempLinks.push(link);  
+  });  
+  
+  // حساب العرض الفعلي لكل عنصر شاملاً البكسلات الدقيقة
+  const widths = tempLinks.map(link => link.getBoundingClientRect().width);  
+  document.body.removeChild(tempWrapper);  
 
-      const moreBtnWidth = 44;
-      let visible = [], hidden = [];
-      let totalWidth = widths.reduce((sum, w) => sum + w + 6, -6);
+  // قياس العرض التقريبي لزر المزيد
+  const moreBtnWidth = 55;  
+  let visible = [], hidden = [];  
+  
+  // حساب المساحة الإجمالية المطلوبة لجميع العناصر مع الفجوات بينها
+  let totalRequiredWidth = widths.reduce((sum, w) => sum + w + currentGap, -currentGap);  
 
-      if (totalWidth <= availableWidth) {
-        visible = [...allNavItems];
-        moreBtn.style.display = "none";
-      } else {
-        let spaceForLinks = availableWidth - moreBtnWidth - 12;
-        let accumulated = 0;
-        for (let i = 0; i < allNavItems.length; i++) {
-          const linkWidth = widths[i];
-          if (accumulated + linkWidth + (visible.length > 0 ? 6 : 0) <= spaceForLinks) {
-            visible.push(allNavItems[i]);
-            accumulated += linkWidth + (visible.length > 1 ? 6 : 0);
-          } else {
-            hidden.push(allNavItems[i]);
-          }
-        }
-        if (visible.length === 0 && allNavItems.length > 0) {
-          visible.push(allNavItems[0]);
-          hidden = allNavItems.slice(1);
-        }
-        moreBtn.style.display = "flex";
-      }
-
-      wrapper.innerHTML = "";
-      visible.forEach((item) => {
-        const a = document.createElement("a");
-        a.className = "nav-link";
-        if (item.active) a.classList.add("active");
-        a.innerText = item.text;
-        a.href = item.link;
-        a.addEventListener("click", (e) => handleNavClick(e, item.link));
-        wrapper.appendChild(a);
-      });
-
-      dropdown.innerHTML = "";
-      hidden.forEach((item) => {
-        const a = document.createElement("a");
-        a.innerText = item.text;
-        a.href = item.link;
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
-          handleNavClick(e, item.link);
-          dropdown.classList.remove("show");
-        });
-        dropdown.appendChild(a);
-      });
-      if (hidden.length === 0) moreBtn.style.display = "none";
-    }
-
-        // ابحث عن هذا الجزء في أسفل الكود واستبدله بالتالي:
-    moreBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      dropdown.classList.toggle("show");
+  if (totalRequiredWidth <= availableWidth) {  
+    // المساحة كافية جداً لظهور كل الأزرار
+    visible = [...allNavItems];  
+    moreBtn.style.display = "none";  
+  } else {  
+    // المساحة ضيقة، يجب توزيع العناصر بين الظاهر والمنسدل
+    let spaceForLinks = availableWidth - moreBtnWidth - 15;  
+    let accumulated = 0;  
+    
+    for (let i = 0; i < allNavItems.length; i++) {  
+      const linkWidth = widths[i];  
+      const nextGap = visible.length > 0 ? currentGap : 0;
       
-      // كود ديناميكي لتغيير اتجاه السهم الأزرق حسب حالة القائمة
-      const arrowSpan = moreBtn.querySelector("span");
-      if (dropdown.classList.contains("show")) {
-        arrowSpan.innerText = "▲"; // سهم لأعلى عند الفتح
-      } else {
-        arrowSpan.innerText = "▼"; // سهم لأسفل عند الإغلاق
-      }
-    });
+      if (accumulated + linkWidth + nextGap <= spaceForLinks) {  
+        visible.push(allNavItems[i]);  
+        accumulated += linkWidth + nextGap;  
+      } else {  
+        hidden.push(allNavItems[i]);  
+      }  
+    }  
+    
+    // تأمين ظهور عنصر واحد على الأقل دائماً
+    if (visible.length === 0 && allNavItems.length > 0) {  
+      visible.push(allNavItems[0]);  
+      hidden = allNavItems.slice(1);  
+    }  
+    moreBtn.style.display = "inline-flex";  
+  }  
 
-    document.addEventListener("click", (event) => {
-      if (!moreBtn.contains(event.target) && !dropdown.contains(event.target)) {
-        dropdown.classList.remove("show");
-        
-        // إرجاع السهم لأسفل إذا تم الإغلاق بالضغط خارج القائمة
-        const arrowSpan = moreBtn.querySelector("span");
-        if (arrowSpan) arrowSpan.innerText = "▼";
-      }
-    });
+  // حقن العناصر المرئية في الحاوية الرئيسية
+  wrapper.innerHTML = "";  
+  visible.forEach((item) => {  
+    const a = document.createElement("a");  
+    a.className = "nav-link";  
+    if (item.active) a.classList.add("active");  
+    a.innerText = item.text;  
+    a.href = item.link;  
+    a.addEventListener("click", (e) => handleNavClick(e, item.link));  
+    wrapper.appendChild(a);  
+  });  
 
-    document.addEventListener("click", (event) => {
-      if (!moreBtn.contains(event.target) && !dropdown.contains(event.target)) {
-        dropdown.classList.remove("show");
-      }
-    });
-    window.addEventListener("resize", () => adjustNavbar());
-    adjustNavbar();
+  // حقن العناصر المخفية في القائمة المنسدلة لزر المزيد
+  dropdown.innerHTML = "";  
+  hidden.forEach((item) => {  
+    const a = document.createElement("a");  
+    a.innerText = item.text;  
+    a.href = item.link;  
+    a.addEventListener("click", (e) => {  
+      e.preventDefault();  
+      handleNavClick(e, item.link);  
+      dropdown.classList.remove("show");  
+    });  
+    dropdown.appendChild(a);  
+  });  
+  
+  if (hidden.length === 0) moreBtn.style.display = "none";  
+}  
+
+// معالجة فتح وإغلاق القائمة عند الضغط على زر المزيد وتبديل الأسهم
+moreBtn.addEventListener("click", (e) => {  
+  e.stopPropagation();  
+  dropdown.classList.toggle("show");  
+    
+  const arrowSpan = moreBtn.querySelector("span");  
+  if (dropdown.classList.contains("show")) {  
+    arrowSpan.innerText = "▲"; 
+  } else {  
+    arrowSpan.innerText = "▼"; 
+  }  
+});  
+
+// إغلاق القائمة تلقائياً عند الضغط في أي مكان خارجها
+document.addEventListener("click", (event) => {  
+  if (!moreBtn.contains(event.target) && !dropdown.contains(event.target)) {  
+    dropdown.classList.remove("show");  
+    const arrowSpan = moreBtn.querySelector("span");  
+    if (arrowSpan) arrowSpan.innerText = "▼";  
+  }  
+});  
+
+// الاستماع لتغيير حجم الشاشة وإعادة الحساب فوراً بالبكسل
+window.addEventListener("resize", adjustNavbar);  
+// تشغيل الحسابات لأول مرة عند تحميل الصفحة
+adjustNavbar();
+
   </script>
   
 </body>
